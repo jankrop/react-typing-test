@@ -27,7 +27,6 @@ export default function TestUI({ text, onFinish }: TestAreaProps) {
         if (startTime == 0) setStartTime(Date.now());  // Initializes test on first type
 
         if (ev.target.value.length == 0) {
-            console.log('Going back...')
             if (currentWordId == 0) return;
             setCurrentWordId(currentWordId - 1);
             setWords(words.map<WordObject>(
@@ -38,7 +37,6 @@ export default function TestUI({ text, onFinish }: TestAreaProps) {
         }
 
         const typedText = ev.target.value.slice(1);
-        console.log(`"${ev.target.value}" "${typedText}"`)
 
         const isSubmitted = typedText[typedText.length - 1] == ' ';
 
